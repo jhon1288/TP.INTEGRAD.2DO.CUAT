@@ -402,7 +402,414 @@ void loginUsuario()
 
     }
 }
+void menuPrinciapl()
+{
+	int opcion;
+	bool banderobich=false;
+	bool banderobich1=false;;
+	
+	do
+	{
+		system("cls"); //CLS significa clear screan(limpiar pantalla)
+		printf("\n\tMENU");
+		printf("\n\n1-Modulo Consultorio Veterinario");//\t es una tabulacion
+		printf("\n\n2-Modulo del Asistente");
+		printf("\n\n3- Módulo Administración");
+		printf("\n\n0-Salir");
+		
+		printf("\n\nIngrese la Opcion: ");
+		scanf("%d",&opcion);
+		
+		switch(opcion)
+		{
+		
+		case 1:
+				int opcion1;
+			
+			do
+			{
+				system("cls"); //CLS significa clear screan(limpiar pantalla)
+				printf("\n\tMENU");
+				printf("\n\n1-Iniciar Sesión");
+				printf("\n\n2-Visualizar Lista de Espera de Turnos (informe)");
+				printf("\n\n3- Registrar Evolución de la Mascota");
+				printf("\n\n4-Cerrar la aplicación");
+				
+				printf("\n\nIngrese la Opcion: ");
+				scanf("%d",&opcion1);
+				
+				switch(opcion1)
+				{
+				
+				case 1:
+						loginUsuario();
+						banderobich=true;
+						break;
+						
+				break;
+				
+				case 2:
+				
+				//	if (banderobich)
+				//	{
+						 listaTurno();
+				/*	}
+				
+					else
+					{
+					printf("\nNo realizo el INICIO DE SESION");
+					printf("\n");
+					system("pause");
+					}*/
+					break;
+					
+				case 3:
+					//	if (banderobich)
+					//{
+						llamarmascota();
+					//}
+				
+					/*else
+					{
+					printf("\nNo realizo el INICIO DE SESION");
+					printf("\n");
+					system("pause");
+					}*/
+					break;
+					
+				case 4:
+					
+					banderobich=false;
+					printf("\n Ud Salio del sistema...");
+					break;
+					
+				default:
+				
+					printf("\nSE EQUIVOCO DE OPCION DEL MENU!!!");	
+				
+				
+			
+				}
+				printf("\n\n");
+				system("pause");
+			}while(opcion1!=4);
+				
 
+		break;
+case 2:	
+		
+				int opcion2;
+
+			
+			do
+			{
+				system("cls"); //CLS significa clear screan(limpiar pantalla)
+				printf("\n\tMENU");
+				printf("\n\n1-Iniciar Sesión");//\t es una tabulacion
+				printf("\n\n2-Registrar Mascota");
+				printf("\n\n3- Registrar Turno");
+				printf("\n\n4- Listado de Atenciones por Veterinario y Fecha");
+				printf("\n\n5-Cerrar la aplicación.");
+				
+				printf("\n\nIngrese la Opcion: ");
+				scanf("%d",&opcion2);
+				
+				switch(opcion2)
+				{
+				
+				case 1:	
+				//	banderobich1=true;
+					loginUsuario();
+					break;
+				
+				case 2:
+					
+				//	if (banderobich1)
+				//	{
+						registrarmascota();
+				/*	}
+				
+					else
+					{
+					printf("\nNo realizo el INICIO DE SESION");
+					printf("\n");
+					system("pause");
+					}*/
+						
+				
+					break;
+					
+				case 3:
+				//	if (banderobich1)
+				//	{
+					registrarTurno();
+				/*	}
+					else
+					{
+					printf("\nNo realizo el INICIO DE SESION");
+					printf("\n");
+					system("pause");
+					}*/
+					
+					
+					break;
+					
+				case 4:
+					
+				//	if (banderobich1)
+				//	{
+						listadoVetPorFecha();
+				/*	}
+				
+					else
+					{
+					printf("\nNo realizo el INICIO DE SESION");
+					printf("\n");
+					system("pause");
+					}*/
+					
+					break;
+					
+				case 5:
+				//	banderobich1=false;
+					printf("\n Ud Salio del sistema...");
+					break;
+				default:
+				
+					printf("\nSE EQUIVOCO DE OPCION DEL MENU!!!");	
+				
+				}
+				printf("\n\n");
+				system("pause");
+				
+			}while(opcion2!=5);
+					
+					
+		break;
+		
+		case 3:
+			int opcion3;
+	
+			do
+			{
+				system("cls"); //CLS significa clear screan(limpiar pantalla)
+				printf("\n\tMENU");
+				printf("\n\n1-- Registrar Veterinario");//\t es una tabulacion
+				printf("\n\n2-Registrar Usuario Asistente");
+				printf("\n\n3- Atenciones por Veterinarios");
+				printf("\n\n4- Ranking de Veterinarios por Atenciones");
+				printf("\n\n5-Cerrar la aplicación");
+			
+				printf("\n\nIngrese la Opcion: ");
+				scanf("%d",&opcion3);
+				
+				switch(opcion3)
+				{
+				
+				
+				case 1:
+					system("cls"); //CLS significa clear screan(limpiar pantalla)
+					registrarveterinario();
+					break;
+				
+								
+				case 2:
+					
+						crearUsuario();
+				
+				break;
+				case 3:
+				
+				break;
+				
+				case 4:
+				
+				
+				break;
+				
+					
+				case 5:
+					printf("\n Ud Salio del sistema...");
+			
+					break;
+							
+				default:
+				
+					printf("\nSE EQUIVOCO DE OPCION DEL MENU!!!");	
+}
+		printf("\n\n");
+		system("pause");
+		
+	}while(opcion!=0);	
+	
+}
+
+void registrarveterinario()
+{
+	int b = 0;
+	Veterinario vet;
+	int i;
+
+	fp = fopen("Veterinarios.dat", "a+b");
+
+	printf("Registro de Veterinario Nº%d", i+1);
+	printf("\n------------------------------\n");
+
+	_flushall();
+	do
+	{
+		printf("Apellido y Nombre: ");
+		gets(vet.ApellidoyNombre);
+	} while (strlen(vet.ApellidoyNombre) == 0);
+	_flushall();
+
+	do
+	{
+		printf("Matricula: ");
+		scanf("%06d", &vet.Matricula);
+	} while (vet.Matricula <= 0 && vet.Matricula >= 999999);
+
+	do
+	{
+		printf("DNI: ");
+		scanf("%08d", &vet.Dni);
+	} while (vet.Dni <= 10000000 && vet.Dni >= 99999999);
+
+	_flushall();
+	do{
+	
+		printf("Télefono: ");
+		scanf("%10d", &vet.Telefono);
+	}while(vet.Telefono>= 1000000000 && vet.Telefono<= 9999999999);
+	
+	_flushall();
+	 fwrite(&vet,sizeof(Veterinario),1,fp);
+	
+	printf("\nCREACION DE USUARIO PARA EL VETERINARIO\n");
+	
+	crearUsuario();
+	
+	fclose(fp);
+	//system("CLS");
+}
+
+
+void registrarmascota()
+{
+	Mascota masc;
+
+	fm= fopen("Mascota.dat", "a+b");
+
+//	printf("Registro de Mascota Nº%d", i+1);
+	printf("\n------------------------------\n");
+
+	_flushall();
+	do
+	{
+		printf("Apellido y Nombre de la Mascota: ");
+		gets(masc.ApellidoyNombre);
+	} while (strlen(masc.ApellidoyNombre) == 0);
+	_flushall();
+
+	do
+	{
+		printf("Domicilio: ");
+		gets(masc.Domiciolio);
+	} while (strlen(masc.Domiciolio) == 0);
+
+	do
+	{
+		printf("DNI del dueño: ");
+		scanf("%08d", &masc.DNIdueneo);
+	}while (masc.DNIdueneo <= 10000000 && masc.DNIdueneo >= 99999999);
+	//(masc.DNIdueneo >= 10000000 && masc.DNIdueneo<= 99999999);
+
+	do
+	{
+		_flushall();
+		printf("Localidad: ");
+		gets(masc.Localidad);
+	} while (strlen(masc.Localidad) == 0);
+	
+		printf("\nFecha de Nacimiento de la Mascota: ");
+		printf("\nDia: ");
+		scanf("%d",&masc.Fecha.dia);
+		printf("Mes: ");
+		scanf("%d",&masc.Fecha.mes);
+		printf("Año: ");
+		scanf("%d",&masc.Fecha.anio);
+		
+			_flushall();
+			
+	printf("\nPeso de la Mascota: ");
+	scanf("%f",&masc.Peso);
+	
+	do{
+	
+		printf("Télefono del Dueño: ");
+		scanf("%10d", &masc.Telefono);
+	}while(masc.Telefono <=1000000000 && masc.Telefono>= 9999999999);
+	
+	_flushall();
+
+	fwrite(&masc,sizeof(Mascota),1,fm);
+	
+	fclose(fm);
+}
+
+void registrarTurno()
+{
+	int a,b;
+	Turnos turn;
+	Veterinario vet;
+	Mascota masc;
+	bool bandera=false;
+	
+	printf("\nIngrese la matricula del Veterinario: ");
+	scanf("%d",&a);
+	
+	ft=fopen("Turnos.dat","a+b");
+	
+	fp=fopen("Veterinarios.dat","rb");
+	fread(&vet, sizeof(Veterinario), 1,fp);
+		while(!feof(fp))
+		{
+			if(a==vet.Matricula)
+			{
+				
+				turn.MatriculadeVeterinario=vet.Matricula;
+				
+				printf("DNI Dueño");
+				scanf("%d",&turn.DNIdueneo);
+				
+				printf("\nFecha del Turno: ");
+				
+				printf("\nDia: ");
+				scanf("%d",&turn.fecha.dia);
+				printf("Mes: ");
+				scanf("%d",&turn.fecha.mes);
+				printf("Año: ");
+				scanf("%d",&turn.fecha.anio);
+				
+				_flushall();
+				printf("\nDetalle de atencion: ");
+				gets(turn.DetalledeAtencion);
+				
+				 fwrite(&turn,sizeof(Turnos),1,ft);
+				 
+				 bandera=true;
+			}	
+			fread(&vet, sizeof(Veterinario), 1,fp);
+		}
+	
+	if(bandera==false)
+	{
+		printf("\nLa matricula ingresada para solicitar el turno NO pertence a ningun Veterinario!!!");
+	}
+	
+	fclose(fp);
+	fclose(ft);
+}			
 
 
 
